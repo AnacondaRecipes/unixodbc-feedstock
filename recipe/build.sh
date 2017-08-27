@@ -3,6 +3,7 @@
 set -e
 set -x
 
-CFLAGS="-O2 ${CFLAGS}" CXXFLAGS="-O2 ${CXXFLAGS}" ./configure --sysconfdir=/etc --prefix=$PREFIX
-make -j${CPU_COUNT}
+./configure --prefix=${PREFIX}
+            --sysconfdir=/etc
+make -j${CPU_COUNT} ${VERBOSE_AT}
 make install
