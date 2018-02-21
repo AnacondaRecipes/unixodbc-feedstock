@@ -1,6 +1,6 @@
 {% set name = "unixODBC" %}
-{% set version = "2.3.4" %}
-{% set sha256 = "2e1509a96bb18d248bf08ead0d74804957304ff7c6f8b2e5965309c632421e39" %}
+{% set version = "2.3.5" %}
+{% set sha256 = "760972e05cc6361aee49d676fb7da8244e0f3a225cd4d3449a951378551b495b" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win]
   run_exports:
     # https://abi-laboratory.pro/tracker/timeline/unixodbc/
