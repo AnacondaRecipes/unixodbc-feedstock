@@ -1,26 +1,27 @@
 {% set name = "unixODBC" %}
-{% set version = "2.3.5" %}
-{% set sha256 = "760972e05cc6361aee49d676fb7da8244e0f3a225cd4d3449a951378551b495b" %}
+{% set version = "2.3.6" %}
+{% set sha256 = "88b637f647c052ecc3861a3baa275c3b503b193b6a49ff8c28b2568656d14d69" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: http://www.unixodbc.org/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
+
 
 build:
   number: 0
   skip: true  # [win]
   run_exports:
-    # https://abi-laboratory.pro/tracker/timeline/unixodbc/
+    # excellent within minor versions: https://abi-laboratory.pro/tracker/timeline/unixodbc/
     - {{ pin_subpackage('unixodbc', max_pin='x.x') }}
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - make
 
 test:
   commands:
