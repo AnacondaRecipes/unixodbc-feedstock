@@ -9,7 +9,8 @@ package:
 source:
   url: http://www.unixodbc.org/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
-
+  patches:
+    - 0001-Add-support-for-editline.patch
 
 build:
   number: 0
@@ -21,7 +22,12 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - automake
+    - libtool
     - make
+  host:
+    - libiconv  # [osx]
+    - libedit
 
 test:
   commands:
