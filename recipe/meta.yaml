@@ -22,16 +22,13 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
     - automake
     - libtool
     - make
   host:
     - libiconv  # [osx]
     - libedit
-  run:
-    - libiconv
-    - libedit
+    - flex
 
 test:
   commands:
