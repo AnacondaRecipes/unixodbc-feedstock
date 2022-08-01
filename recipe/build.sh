@@ -8,6 +8,10 @@ export CXXFLAGS="-O2 ${CXXFLAGS}"
 
 autoreconf -vfi
 
+if [[ ${target_platform} == osx-64 ]]; then
+  export SDKROOT=${CONDA_BUILD_SYSROOT}
+fi
+
 ./configure --prefix=${PREFIX}  \
             --build=${BUILD} \
             --enable-editline=yes \
