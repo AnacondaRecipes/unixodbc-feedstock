@@ -9,8 +9,6 @@ package:
 source:
   url: http://www.unixodbc.org/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
-    # patches:
-    #   - 0001-Add-support-for-editline.patch
 
 build:
   number: 0
@@ -45,7 +43,7 @@ test:
 
 about:
   home: http://www.unixodbc.org/
-  license: LGPL-2.1
+  license: LGPL-2.1-or-later
   license_file: COPYING
   license_family: LGPL
   summary: 'ODBC on non MS Windows platforms'
