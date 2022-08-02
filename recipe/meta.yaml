@@ -52,6 +52,7 @@ about:
     definitive standard for ODBC on non MS Windows platforms. This is to
     include GUI support for both KDE and GNOME.
   doc_url: http://www.unixodbc.org/doc/UserManual/
+  dev_url: https://github.com/lurcher/unixODBC
 
 extra:
   recipe-maintainers:
