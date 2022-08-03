@@ -1,6 +1,6 @@
 {% set name = "unixODBC" %}
-{% set version = "2.3.9" %}
-{% set sha256 = "52833eac3d681c8b0c9a5a65f2ebd745b3a964f208fc748f977e44015a31b207" %}
+{% set version = "2.3.11" %}
+{% set sha256 = "d9e55c8e7118347e3c66c87338856dad1516b490fb7c756c1562a2c267c73b5c" %}
 
 package:
   name: {{ name|lower }}
@@ -9,8 +9,6 @@ package:
 source:
   url: http://www.unixodbc.org/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
-    # patches:
-    #   - 0001-Add-support-for-editline.patch
 
 build:
   number: 0
@@ -45,7 +43,7 @@ test:
 
 about:
   home: http://www.unixodbc.org/
-  license: LGPL-2.1
+  license: LGPL-2.1-or-later
   license_file: COPYING
   license_family: LGPL
   summary: 'ODBC on non MS Windows platforms'
@@ -54,6 +52,7 @@ about:
     definitive standard for ODBC on non MS Windows platforms. This is to
     include GUI support for both KDE and GNOME.
   doc_url: http://www.unixodbc.org/doc/UserManual/
+  dev_url: https://github.com/lurcher/unixODBC
 
 extra:
   recipe-maintainers:
