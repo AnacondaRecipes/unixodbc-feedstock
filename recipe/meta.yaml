@@ -1,14 +1,13 @@
 {% set name = "unixODBC" %}
-{% set version = "2.3.11" %}
-{% set sha256 = "d9e55c8e7118347e3c66c87338856dad1516b490fb7c756c1562a2c267c73b5c" %}
+{% set version = "2.3.14" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: http://www.unixodbc.org/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: http://www.{{ name|lower }}.org/{{ name }}-{{ version }}.tar.gz
+  sha256: 4e2814de3e01fc30b0b9f75e83bb5aba91ab0384ee951286504bb70205524771
 
 build:
   number: 0
@@ -42,16 +41,16 @@ test:
     - iusql --help
 
 about:
-  home: http://www.unixodbc.org/
+  home: https://www.unixodbc.org
   license: LGPL-2.1-or-later
   license_file: COPYING
   license_family: LGPL
-  summary: 'ODBC on non MS Windows platforms'
+  summary: ODBC on non MS Windows platforms
   description: |
     The unixODBC Project goals are to develop and promote unixODBC to be the
     definitive standard for ODBC on non MS Windows platforms. This is to
     include GUI support for both KDE and GNOME.
-  doc_url: http://www.unixodbc.org/doc/UserManual/
+  doc_url: https://www.unixodbc.org/doc/UserManual
   dev_url: https://github.com/lurcher/unixODBC
 
 extra:
